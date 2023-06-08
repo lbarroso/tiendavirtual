@@ -27,6 +27,9 @@
   <link rel="stylesheet" href="{{ asset('css/style.min.css') }}">
 
   <title> @yield('page-title') </title>
+
+  @yield('styles')
+
 </head>
 
 <body>
@@ -290,15 +293,17 @@
 
   <!-- Plugins -->
   <script src="{{ asset('plugins/swiper/swiper.min.js') }}"></script>
-  <script src="{{ asset('plugins/jquery-countdown/jquery.countdown.min.js') }}"></script>
-  
+
+  @yield('scripts')  
+
+
   <!-- Application script -->
   <script src="{{ asset('js/app.min.js') }}"></script>
   <script>
     $(() => {
 
-      App.atcDemo() // Add to Cart Demo
-      App.atwDemo() // Add to Wishlist Demo
+      // App.atcDemo() // Add to Cart Demo
+      // App.atwDemo() // Add to Wishlist Demo
       App.homeSlider('#homeSlider')
       App.dealSlider2('#dealSlider2')
       App.brandSlider('#brandSlider')
@@ -313,6 +318,7 @@
         */
     })
   </script>
+
 </body>
 
 </html>
