@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon/favicon.ico') }}">
   <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon/favicon.ico') }}">
@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon/touch-icon-iphone-retina.png') }}">
   <link rel="apple-touch-icon" sizes="167x167" href="{{ asset('img/favicon/touch-icon-ipad-retina.png') }}">
 
-  <!-- Plugins -->
+  <!-- Plugins -->  
   <link rel="stylesheet" href="{{ asset('plugins/swiper/swiper.min.css') }}">
 
   <!-- Main style -->
@@ -72,14 +72,14 @@
         <a href="#menuModal" data-toggle="modal" class="nav-link nav-icon"><i class="material-icons">menu</i></a>
       </nav>
       <nav class="nav ml-3 ml-lg-0">
-        <a href="index.html" class="nav-link has-icon p-0 bg-white">
+        <a href="{{ route('home') }}" class="nav-link has-icon p-0 bg-white">
           <img src="{{ asset('img/logo.png') }}" alt="Logo" height="40">
         </a>
       </nav>
 
       <nav class="nav nav-main nav-gap-x-1 nav-pills ml-3 d-none d-lg-flex">
         <div class="nav-item dropdown dropdown-hover">
-          <a class="nav-link dropdown-toggle no-caret forwardable active" href="index.html" id="homeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle no-caret forwardable active" href="{{ route('home') }}" id="homeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Inicio
           </a>
         </div>
@@ -203,7 +203,7 @@
         </div>
         <div class="modal-body px-0 scrollbar-width-thin">
           <ul class="menu" id="menu">
-            <li class="no-sub"><a href="index.html"><i class="material-icons">home</i> Home</a></li>
+            <li class="no-sub"><a href="{{ route('home') }}"><i class="material-icons">home</i> Home</a></li>
             <li class="no-sub mm-active"><a href="index2.html"><i class="material-icons">home_work</i> Home layout 2</a></li>
             <li class="no-sub"><a href="index3.html"><i class="material-icons">phonelink</i> Electronics Store</a></li>
             <li>

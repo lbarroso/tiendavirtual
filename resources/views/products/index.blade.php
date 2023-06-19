@@ -140,12 +140,12 @@
         <div class="swiper-container" id="dealSlider2">
 				  
           <div class="swiper-wrapper">
-			@foreach ($news as $row)
+			    @foreach ($news as $row)
             <div class="swiper-slide card card-product">
               <div class="card-body">
                 &nbsp;
-                <a href="shop-single.html"><img class="card-img-top" src="{{ asset('img/products/'.$row->isbn.'.jpg') }}" alt="{{ $row->title }}"></a>
-                <a href="shop-single.html" class="card-title card-link"> {{ $row->title }} </a>
+                <a href="{{ route('products.single', ['id' => $row->id]) }}"><img class="card-img-top" src="{{ asset('img/products/'.$row->isbn.'.jpg') }}" alt="{{ $row->title }}"></a>
+                <a href="{{ route('products.single', ['id' => $row->id]) }}" class="card-title card-link"> {{ $row->title }} </a>
                 <span class="badge badge-warning">5% </span>
                 <div class="price">
                   <span class="h4">$ {{ $row->price }}</span>
@@ -156,7 +156,7 @@
                 &nbsp;
               </div>
             </div>	
-			@endforeach 	
+			    @endforeach 	
           </div>
 		  
           <div class="swiper-button-prev"><i class="material-icons">chevron_left</i></div>
@@ -222,7 +222,7 @@
 			@foreach ($sellers as $row)
             <li class="list-group-item px-0">
               <div class="media">
-                <a href="shop-single.html">
+                <a href="{{ route('products.single', ['id' => $row->id]) }}">
                   <img src="{{ asset('img/products/'.$row->isbn.'.jpg') }}" width="75" alt="{{ $row->title }}">
                 </a>
                 <div class="media-body ml-3">
