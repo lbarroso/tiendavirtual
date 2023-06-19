@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [App\Http\Controllers\ProductController::class, 'index'])->name('home');
+Route::get('/productsingle/{id}', [App\Http\Controllers\ProductController::class, 'productsingle'])->name('products.single');
+Route::get('/productgrid', [App\Http\Controllers\ProductController::class, 'productgrid'])->name('products.grid');
