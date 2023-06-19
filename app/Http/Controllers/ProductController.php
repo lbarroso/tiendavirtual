@@ -34,14 +34,33 @@ class ProductController extends Controller
     } // index
 
     /**
-     * Show the form for creating a new resource.
+     * productos detalle
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function productSingle(Request $request)
     {
-        //
+        $id = !empty($request->id) ? (int)$request->id : false;
+        // query row product
+        $product = Product::where('id', $id)->first();
+        // query productos relacionados
+        $related = Product::inRandomOrder()->where('genre', $product->genre)->limit(4)->get();
+
+        // vista producto detalle
+        return view('products.product-single',compact('product','related'));
     }
+
+    /**
+     * productos por categoria
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function productGrid()
+    {
+
+        // vista producto detalle
+        return view('products.product-grid');
+    }    
 
     /**
      * Store a newly created resource in storage.
