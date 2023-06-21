@@ -21,7 +21,7 @@ class ProductController extends Controller
         // mas vendidos
         $sellers = Product::inRandomOrder()->where('sellers', '1')->limit(4)->get();
         // generos
-        $genders = DB::select("SELECT genre FROM products WHERE category ='LIBROS' GROUP BY genre ORDER BY RAND() LIMIT 4 ");
+        $genders = DB::select("SELECT category, genre FROM products WHERE category ='LIBROS' GROUP BY genre ORDER BY RAND() LIMIT 4 ");
         // categorias
         //$categories = DB::select("SELECT category, COUNT(genre) conteo FROM products GROUP BY category");
         // productos ralacionados
@@ -55,11 +55,25 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function productGrid()
+    public function productGrid(Request $request)
     {
+        $category = !empty($request->category) ? trim($request->category) : false;
+        $genre = !empty($request->genre) ? trim($request->genre) : false;
+
+        // listado todos los generos
+        $genders = DB::select("SELECT genre, COUNT(genre) count
+        FROM products
+        WHERE category ='$category' AND genre LIKE '%$genre%'
+        GROUP BY genre");
+
+        // listado de productos
+        $products = Product::where('category', $category)
+            ->where('genre', 'like', '%'.$genre.'%')
+            ->orderBy('title')
+            ->Paginate(20);
 
         // vista producto detalle
-        return view('products.product-grid');
+        return view('products.product-grid',compact('genders','products','category','genre'));
     }    
 
     /**
@@ -74,14 +88,15 @@ class ProductController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * modulo de contacto
      *
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function contact( )
     {
-        //
+        // view
+        return view('contact.index'); 
     }
 
     /**

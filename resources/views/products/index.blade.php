@@ -49,7 +49,7 @@
           <div class="text-center p-3 order-md-1">
             <h3>Infantil</h3>
             <p class="text-center d-none d-md-block"> Conozca nuestra area Infantil</p>
-            <a href="shop-grid.html" class="btn btn-outline-primary rounded-pill stretched-link">Ver más</a>
+            <a href="{{ route('products.grid', ['category' => 'LIBROS', 'genre' => 'INFANTIL']) }}" class="btn btn-outline-primary rounded-pill stretched-link">Ver más</a>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@
           <div class="text-center p-3 order-md-1">
             <h3>Artesanias</h3>
             <p class="text-center d-none d-md-block"> Contamos con una variedad de productos</p>
-            <a href="shop-grid.html" class="btn btn-outline-danger rounded-pill stretched-link"> Ver más</a>
+            <a href="{{ route('products.grid', ['category' => 'ARTESANIA', 'genre' => 'TEXTIL']) }}" class="btn btn-outline-danger rounded-pill stretched-link"> Ver más</a>
           </div>
         </div>
       </div>
@@ -118,7 +118,7 @@
         <div data-cover="{{ asset('img/discover/boton-lobito-verde.png') }}" data-height="125px 130px 150px 120px 150px"></div>
         <div class="overlay overlay-show bg-dark"></div>
         <div class="overlay-content overlay-show">
-          <a href="shop-grid.html" class="card-link h3 text-white font-condensed stretched-link text-center px-3"> {{ $row->genre }}</a>
+          <a href="{{ route('products.grid', ['category' => $row->category, 'genre' => $row->genre]) }}" class="card-link h3 text-white font-condensed stretched-link text-center px-3"> {{ $row->genre }}</a>
         </div>
       </div>
     @endforeach  
@@ -238,7 +238,7 @@
       </div>
 	  
       <div class="card card-style1">
-        <a href="shop-grid.html" class="card-link">
+        <a href="{{ route('products.grid', ['category' => 'LIBROS', 'genre' => 'INFANTIL']) }}" class="card-link">
           <img class="card-img-top" src="{{ asset('img/categories/libros.jpg') }}" alt="Men">
           <div class="card-body bg-primary-faded text-primary">
             <h5 class="mb-0"> LIBROS </h5>

@@ -83,7 +83,7 @@
                     </div>
                   </div>
                   <div class="form-group col-6 col-sm-8 col-md-7 col-lg-8 d-flex align-items-end">
-                    <a href="https://api.whatsapp.com/send?phone=529516503271&text=Más%20información%de%20:{{ $product->title }}%20clave:{{ $product->isbn }}">
+                    <a href="https://api.whatsapp.com/send?phone=529516503271&text=Hola%20lo%20contacto%20desde%20su%20sitio%20Web%20requier0%20información%20de%20:{{ $product->title }}%20clave: {{ $product->isbn }}">
                       <button class="btn rounded-pill btn-primary btn-block atc-demo" type="button" data-title="{{ $product->title }}"> Preguntar por este producto </button>
                     </a>
                   </div>

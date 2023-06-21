@@ -122,7 +122,7 @@
           </div>
         </div>
         
-        <a class="nav-item nav-link" href="components.html">
+        <a class="nav-item nav-link" href="{{ route('contact') }}">
           Contacto
         </a>
       </nav>
